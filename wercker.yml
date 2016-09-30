@@ -4,9 +4,7 @@ build:
     - npm-install
     - script:
         name: build the optimized version
-        code: |
-          echo "node version $(node -v) running"
-          echo "npm version $(npm -v) running"
+        code: npm run build
     - script:
         name: copy build to deployable
         code: cp -a ./build/. $WERCKER_OUTPUT_DIR
