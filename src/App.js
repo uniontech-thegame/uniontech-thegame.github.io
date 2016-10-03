@@ -1,3 +1,5 @@
+/* global fetch*/
+
 import injectTapEventPlugin from 'react-tap-event-plugin'
 
 // Needed for onTouchTap
@@ -31,27 +33,18 @@ class App extends Component {
     super(props)
 
     this.state = {
-      loading: false,
+      loading: true,
       activePage: PAGES.HOME,
       data: {
-        'teams': [
-          { 'id': 0, 'points': 24, 'name': 'SUPERSONIC', 'history': [
-            { 'type': 'activity', 'points': 20, 'title': 'Bowling', 'description': '1er au bowling', 'date': '2012-04-23T18:25:43.511Z' },
-            { 'type': 'bonus', 'points': 4, 'title': 'Bonus', 'description': "Bonus situé dans le mail de l'administration", 'from': 'Marvin', 'date': '2012-04-23T18:25:43.511Z' }
-          ]},
-          { 'id': 1, 'points': 12, 'name': 'Les saucissons sauvages', 'history': [
-            { 'type': 'activity', 'points': 10, 'title': 'Bowling', 'description': '2ème au bowling', 'date': '2012-04-23T18:25:43.511Z' },
-            { 'type': 'bonus', 'points': 2, 'title': 'Bonus', 'description': 'Bonus énigme', 'from': 'Valentin', 'date': '2012-04-23T18:25:43.511Z' }
-          ]},
-          { 'id': 2, 'points': 6, 'name': 'Les Plaies Mobiles', 'history': [
-            { 'type': 'bonus', 'points': 6, 'title': 'Bonus', 'description': 'Bonus énigme', 'from': 'Mathieu', 'date': '2012-04-23T18:25:43.511Z' }
-          ]},
-          { 'id': 3, 'points': 1, 'name': "L'écu bordé de nouilles", 'history': [
-            { 'type': 'activity', 'points': 1, 'title': 'Bowling', 'description': 'Point de participation', 'date': '2012-04-23T18:25:43.511Z' }
-          ]}
-        ]
+        'teams': []
       }
     }
+
+    fetch('http://uniontechthegameapi-nivramdu94.rhcloud.com/teams').then(function (res) {
+      return res.json()
+    }).then((data) => {
+      this.setState({ loading: false, data })
+    })
 
     this.onMenuChange = this.onMenuChange.bind(this)
   }
