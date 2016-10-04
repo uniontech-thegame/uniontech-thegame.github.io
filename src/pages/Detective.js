@@ -106,7 +106,7 @@ class Detective extends Component {
               case 'used':
                 return (<p style={{ textAlign: 'center' }}>Le code a déjà été utilisé. Désolé !</p>)
               case 'ok':
-                return (<p style={{ textAlign: 'center' }}>Bravo. Les points ont été attribués !</p>)
+                return (<p style={{ textAlign: 'center' }}>Bravo. Les points ont été attribués ! Rechargez la page pour mettre à jour le classement.</p>)
               default:
                 return (<p style={{ textAlign: 'center' }}>Une erreur est survenue.</p>)
             }
