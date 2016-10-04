@@ -1,5 +1,3 @@
-/* global fetch*/
-
 import injectTapEventPlugin from 'react-tap-event-plugin'
 
 // Needed for onTouchTap
@@ -40,7 +38,7 @@ class App extends Component {
       }
     }
 
-    fetch('http://uniontechthegameapi-nivramdu94.rhcloud.com/teams').then(function (res) {
+    window.fetch('http://uniontechthegameapi-nivramdu94.rhcloud.com/teams').then(function (res) {
       return res.json()
     }).then((data) => {
       this.setState({ loading: false, data })
@@ -73,7 +71,7 @@ class App extends Component {
               {(() => {
                 switch (this.state.activePage) {
                   case PAGES.HOME: return <HomePage />
-                  case PAGES.DETECTIVE: return <DetectivePage />
+                  case PAGES.DETECTIVE: return <DetectivePage data={this.state.data}/>
                   case PAGES.LEADERBOARD: return <LeaderboardPage data={this.state.data} />
                   default: return <div>Page invalide</div>
                 }
