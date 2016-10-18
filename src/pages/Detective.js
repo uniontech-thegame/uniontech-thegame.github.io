@@ -21,9 +21,9 @@ class Detective extends Component {
       enigmaSelected: false,
       teamText: null,
       teamId: null,
-      code: null,
-      answer: null,
-      from: null
+      code: '',
+      answer: '',
+      from: ''
     }
 
     this.handleDialogOpen = this.handleDialogOpen.bind(this)
@@ -49,14 +49,14 @@ class Detective extends Component {
   handleSend () {
     if (!this.state.code) return window.alert('Le code ne doit pas être vide.')
     if (!this.state.teamId) return window.alert('Aucune équipe sélectionnée.')
-    if (!this.state.from) return window.alert('Le nom de la personne offrant les points ne doit pas être vide.')
+    if (!this.state.from) return window.alert("L'e-mail ne doit pas être vide.")
 
     if (this.state.enigmaSelected && !this.state.answer) return window.alert('La réponse ne doit pas être vide.')
 
-    this.setState({ statusDialogOpened: true, statusSending: 'doing', dialogOpened: false })
+    this.setState({ statusDialogOpened: true, statusSending: 'DOING', dialogOpened: false })
 
     const toSend = {
-      name: this.state.from,
+      email: this.state.from,
       code: this.state.code,
       recipientTeam: this.state.teamId,
       type: this.state.enigmaSelected ? 'enigma' : 'gift'
@@ -64,7 +64,7 @@ class Detective extends Component {
 
     if (this.state.enigmaSelected) toSend.answer = this.state.answer
 
-    window.fetch('http://uniontechthegameapi-nivramdu94.rhcloud.com/redeem', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(toSend) }).then(function (res) {
+    window.fetch(`https://uniontech-thegame-api.herokuapp.com/redeem/${this.state.enigmaSelected ? 'enigma' : 'gift'}`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(toSend) }).then(function (res) {
       return res.json()
     }).then((data) => {
       this.setState({ statusSending: data.status })
@@ -80,7 +80,7 @@ class Detective extends Component {
   }
 
   handleTeamChange (event, key, value) {
-    this.setState({ teamText: value, teamId: key })
+    this.setState({ teamText: value, teamId: value })
   }
 
   render () {
@@ -97,15 +97,19 @@ class Detective extends Component {
           <br />
           {(() => {
             switch (this.state.statusSending) {
-              case 'doing':
-                return (<p style={{ textAlign: 'center' }}><CircularProgress size={1.5} /></p>)
-              case 'not_found':
+              case 'DOING':
+                return (<div style={{ textAlign: 'center' }}><CircularProgress size={1.5} /></div>)
+              case 'PLAYER_NOT_EXISTING':
+                return (<p style={{ textAlign: 'center' }}>Cet e-mail n'existe pas.</p>)
+              case 'TEAM_NOT_EXISTING':
+                return (<p style={{ textAlign: 'center' }}>Cette équipe n'existe pas.</p>)
+              case 'NOT_FOUND':
                 return (<p style={{ textAlign: 'center' }}>Le code n'existe pas.</p>)
-              case 'bad_answer':
+              case 'BAD_ANSWER':
                 return (<p style={{ textAlign: 'center' }}>La réponse à l'énigme n'est pas correcte.</p>)
-              case 'used':
+              case 'USED':
                 return (<p style={{ textAlign: 'center' }}>Le code a déjà été utilisé. Désolé !</p>)
-              case 'ok':
+              case 'OK':
                 return (<p style={{ textAlign: 'center' }}>Bravo. Les points ont été attribués ! Rechargez la page pour mettre à jour le classement.</p>)
               default:
                 return (<p style={{ textAlign: 'center' }}>Une erreur est survenue.</p>)
@@ -113,7 +117,7 @@ class Detective extends Component {
           })()}
 
           {(() => {
-            if (this.state.statusSending !== 'doing') {
+            if (this.state.statusSending !== 'DOING') {
               return <span><br/><br/><RaisedButton label='Fermer' primary onTouchTap={this.handleStatusDialogClose} /></span>
             }
           })()}
@@ -157,13 +161,13 @@ class Detective extends Component {
           })()}
           <br />
           <SelectField onChange={this.handleTeamChange} value={this.state.teamText} floatingLabelText='Équipe à laquelle donner les points' fullWidth>
-            {this.props.data.teams.map((team) => {
-              return <MenuItem value={team._id} primaryText={team.name} key={team._id} />
+            {Object.keys(this.props.data.teams).map((team) => {
+              return <MenuItem value={team} primaryText={team} key={team} />
             })}
           </SelectField>
           <TextField
-            hintText='Votre nom'
-            floatingLabelText='Cadeau de la part de...'
+            hintText='Votre e-mail'
+            floatingLabelText='E-mail @intechinfo.fr'
             value={this.state.from}
             onChange={(event) => this.setState({ from: event.target.value })}
             fullWidth
@@ -193,6 +197,6 @@ export default Detective
 
 Detective.propTypes = {
   data: React.PropTypes.shape({
-    teams: React.PropTypes.array.isRequired
+    teams: React.PropTypes.object.isRequired
   }).isRequired
 }

@@ -38,7 +38,7 @@ class App extends Component {
       }
     }
 
-    window.fetch('http://uniontechthegameapi-nivramdu94.rhcloud.com/teams').then(function (res) {
+    window.fetch('https://uniontech-thegame-api.herokuapp.com/teams').then(function (res) {
       return res.json()
     }).then((data) => {
       this.setState({ loading: false, data })
@@ -62,7 +62,7 @@ class App extends Component {
             open={this.state.loading}
             onRequestClose={this.handleClose}
           >
-            <p style={{ textAlign: 'center' }}><CircularProgress size={1.5} /></p>
+            <div style={{ textAlign: 'center' }}><CircularProgress size={1.5} /></div>
           </Dialog>
           <AppBar />
           <BottomNavigation onMenuChange={this.onMenuChange} />
