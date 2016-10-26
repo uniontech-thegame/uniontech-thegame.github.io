@@ -113,9 +113,10 @@ class Leaderboard extends Component {
           autoScrollBodyContent
         >
           <ul>
-            {this.state.dialogHistory.players.map((player, i) => {
+            {/*this.state.dialogHistory.players.map((player, i) => {
               return <li key={i}>{player.name.first} {player.name.last} (S{player.semester})</li>
-            })}
+            })*/}
+            <li>Bientôt</li>
           </ul>
         </Dialog>
         <Table>
