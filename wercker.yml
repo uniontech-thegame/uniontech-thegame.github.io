@@ -7,7 +7,7 @@ build:
         code: npm run build
     - script:
         name: copy build to deployable
-        code: cp -a ./build/. $WERCKER_OUTPUT_DIR
+        code: cp -a ./dist/. $WERCKER_OUTPUT_DIR
     - script:
         name: copy CNAME to deployable
         code: cp ./CNAME $WERCKER_OUTPUT_DIR

@@ -1,21 +1,17 @@
 {
-  "name": "uniontech-ui",
-  "version": "0.1.0",
   "private": true,
-  "devDependencies": {
-    "react-scripts": "0.6.1"
+  "name": "uttg",
+  "scripts": {
+    "dev": "vbuild --dev",
+    "build": "vbuild"
   },
   "dependencies": {
-    "material-ui": "^0.15.4",
-    "react": "^15.3.2",
-    "react-dom": "^15.3.2",
-    "react-tap-event-plugin": "^1.0.0",
-    "reflexbox": "^2.2.2"
+    "eva.js": "^1.1.1",
+    "vbuild": "^3.0.0",
+    "vue": "^2.0.0",
+    "vue-resource": "^1.0.3"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+  "devDependencies": {
+    "standard": "^8.5.0"
   }
 }

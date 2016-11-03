@@ -1,0 +1,102 @@
+<template>
+  <div id="app">
+    <div v-if="isLoading" class="loading-screen"><p>Chargement... On y est presque !</p></div>
+    <img src="../assets/images/logo.png" alt="Logo" id="logo">
+    <custom-menu></custom-menu>
+    <router-view></router-view>
+  </div>
+</template>
+
+<script>
+import CustomMenu from './Menu'
+import {mapState, mapActions} from 'eva.js'
+
+export default {
+  computed: {
+    ...mapState(['isLoading'])
+  },
+  methods: {
+    ...mapActions(['refreshState'])
+  },
+  components: {
+    CustomMenu
+  },
+  created () {
+    this.refreshState()
+  }
+}
+</script>
+
+<style>
+  html, body, #app, .page {
+    height: 100%;
+  }
+  body {
+    margin: 0;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+  }
+  * {
+    box-sizing: border-box;
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+
+  .page {
+    background-color: white;
+  }
+
+  .page .container {
+    width: 70%;
+    height: 95%;
+
+    padding-top: 20px;
+    margin-left: 20%;
+
+    overflow-y: auto;
+  }
+
+  h1, h2 {
+    margin: 0;
+  }
+
+  h2 {
+    font-size: 50px;
+    text-shadow: 3px 3px 0 rgba(0, 0, 0, .3);
+  }
+
+  h2, p {
+    color: #fff;
+  }
+</style>
+
+<style scoped>
+  #logo {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+
+    width: 64px;
+    height: 64px;
+  }
+
+  .loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, .8);
+
+    text-align: center;
+    color: #fff;
+    font-size: 30px;
+
+    z-index: 1;
+  }
+
+  .loading-screen > p {
+    margin-top: 50vh;
+    transform: translateY(-50%);
+  }
+</style>

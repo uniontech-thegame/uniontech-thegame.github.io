@@ -11,16 +11,15 @@ The sources of the front-end are open-sourced so that you can contribute to the 
 
 ### Quickstart guide
 
-You need [Node.js v6](https://nodejs.org/) installed. Clone this repository and `cd` to it. Run `npm install` to install the dependencies, and `npm start` to start developing. This command will build the assets, spawn a webserver, open a browser tab to the website and watch files for change, rebuilding automatically as needed.
+You need [Node.js v6](https://nodejs.org/) installed. Clone this repository and `cd` to it. Run `npm install` to install the dependencies, and `npm run dev` to start developing. This command will build the assets, spawn a webserver, open a browser tab to the website and watch files for change, rebuilding automatically as needed.
 
 ## Technologies used
 
 ### Front-end
 
-* [React](https://facebook.github.io/react/): a JavaScript library for building user interfaces
-* [Material-UI](http://www.material-ui.com/): a Set of React Components that Implement Google's Material Design
+* [Vue.js](https://vuejs.org/): a JavaScript library for building user interfaces
 
 ### Back-end
 
 * [Node.js](https://nodejs.org/): a JavaScript runtime built on Chrome's V8 JavaScript engine
-* [MongoDB](https://www.mongodb.com/): a document-oriented database
+* [PostgreSQL](https://www.postgresql.org/): the world's most advanced open source database
