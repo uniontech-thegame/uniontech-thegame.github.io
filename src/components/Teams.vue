@@ -1,8 +1,8 @@
 <template>
   <div class="page">
     <div class="container">
-      <h2>Équipes et classement</h2>
-      <p>Ceci est le classement.</p>
+      <h1>Équipes et classement</h1>
+      <p>Ceci est le classement des équipes. Vous pouvez également consulter les membres de chaque équipe et l'historique des points.</p>
       <p>
         <ul>
           <li v-for="(team, name) in teams" :class="{ yellow: name === 'Jaune', red: name === 'Rouge', green: name === 'Vert', blue: name === 'Bleu' }">

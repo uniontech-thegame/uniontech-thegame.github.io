@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <div v-if="isLoading" class="loading-screen"><p>Chargement... On y est presque !</p></div>
-    <img src="../assets/images/logo.png" alt="Logo" id="logo">
+    <img src="../assets/images/logo.png" alt="UNION'TECH" id="logo" role="banner">
     <custom-menu></custom-menu>
-    <router-view></router-view>
+    <router-view role="main"></router-view>
   </div>
 </template>
 
@@ -58,12 +58,12 @@ export default {
     margin: 0;
   }
 
-  h2 {
+  h1 {
     font-size: 50px;
     text-shadow: 3px 3px 0 rgba(0, 0, 0, .3);
   }
 
-  h2, p {
+  h1, p {
     color: #fff;
   }
 </style>

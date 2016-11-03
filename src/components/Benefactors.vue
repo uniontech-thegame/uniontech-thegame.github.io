@@ -1,8 +1,8 @@
 <template>
   <div class="page">
     <div class="container">
-      <h2>Membres bienfaiteurs</h2>
-      <p>Ils sont bien faits.</p>
+      <h1>Membres bienfaiteurs</h1>
+      <p>Merci à eux !</p>
       <p>
         <ul>
           <li v-for="benefactor of benefactors"><b>{{ benefactor.name.first }} {{ benefactor.name.last }}</b></li>

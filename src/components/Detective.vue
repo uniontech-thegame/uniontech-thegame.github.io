@@ -5,15 +5,15 @@
       <p slot="body" style="color: #000;">{{ result }}</p>
     </modal>
     <div class="container">
-      <h2>Détective</h2>
+      <h1>Détective</h1>
       <p>Vous avez trouvé un code ou la réponse à une énigme ? Vous êtes au bon endroit.</p>
       <p>
         <form @submit.prevent="send">
-          <label>
-            Type
+          <fieldset>
+            <legend>Type</legend>
             <label class="radio-label"><input type="radio" v-model="type" name="type" value="enigma"> Énigme</label>
             <label class="radio-label"><input type="radio" v-model="type" name="type" value="gift"> Cadeau</label>
-          </label>
+          </fieldset>
 
           <label>
             Code
@@ -125,6 +125,9 @@ label, button {
   font-weight: bold;
   color: #fff;
 }
+
+legend { color: #fff; font-weight: bold; }
+fieldset { border: 1px solid #fff; }
 
 button {
   color: #000;

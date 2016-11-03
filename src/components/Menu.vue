@@ -1,10 +1,10 @@
 <template>
-  <menu>
-    <router-link to='/' exact><img src="../assets/images/book.png" alt="Livre"></router-link>
-    <router-link to='/detective' exact><img src="../assets/images/detective.png" alt="Détective"></router-link>
-    <router-link to='/equipes' exact><img src="../assets/images/team.png" alt="Mains"></router-link>
-    <router-link to='/bienfaiteurs' exact><img src="../assets/images/star.png" alt="Étoile"></router-link>
-  </menu>
+  <nav>
+    <router-link to="/" exact><img src="../assets/images/book.png" alt="Introduction"></router-link>
+    <router-link to="/detective" exact><img src="../assets/images/detective.png" alt="Détective"></router-link>
+    <router-link to="/equipes" exact><img src="../assets/images/team.png" alt="Équipes et classement"></router-link>
+    <router-link to="/bienfaiteurs" exact><img src="../assets/images/star.png" alt="Membres bienfaiteurs"></router-link>
+  </nav>
 </template>
 
 <script>
@@ -13,7 +13,7 @@ export default {
 </script>
 
 <style scoped>
-menu {
+nav {
   position: fixed;
 
   padding: 0;

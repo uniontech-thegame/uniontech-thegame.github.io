@@ -1,10 +1,10 @@
 <template>
   <div class="page">
     <div class="container">
-      <h2>Équipe <span :class="{ yellow: team === 'jaune', red: team === 'rouge', green: team === 'vert', blue: team === 'bleu' }">{{team | capitalize}}</span></h2>
+      <h1>Équipe <span :class="{ yellow: team === 'jaune', red: team === 'rouge', green: team === 'vert', blue: team === 'bleu' }">{{team | capitalize}}</span></h1>
 
       <div class="team">
-        <h3>Membres</h3>
+        <h2>Membres</h2>
 
         <p>
           <ul>
@@ -14,9 +14,9 @@
       </div>
 
       <div class="points">
-        <h3>Historique des points</h3>
+        <h2>Historique des points</h2>
 
-        <h4><i class="material-icons">directions_run</i> Activités</h4>
+        <h3><i class="material-icons">directions_run</i> Activités</h3>
         <p>
           <ul v-if="currentTeam.activities_results.length !== 0">
             <li v-for="activityResult of currentTeam.activities_results">
@@ -28,7 +28,7 @@
           <span v-else>Rien à afficher.</span>
         </p>
 
-        <h4><i class="material-icons">search</i> Énigmes</h4>
+        <h3><i class="material-icons">search</i> Énigmes</h3>
         <p>
           <ul v-if="currentTeam.enigmas.length !== 0">
             <li v-for="enigma of currentTeam.enigmas">
@@ -43,7 +43,7 @@
           <span v-else>Rien à afficher.</span>
         </p>
 
-        <h4><i class="material-icons">card_giftcard</i> Cadeaux</h4>
+        <h3><i class="material-icons">card_giftcard</i> Cadeaux</h3>
         <p>
           <ul v-if="currentTeam.gifts.length !== 0">
             <li v-for="gift of currentTeam.gifts">
@@ -102,25 +102,25 @@ export default {
   background-color: #2c3e50;
 }
 
-h3, h4 {
+h2, h3 {
   color: #fff;
 }
 
-h4 {
+h3 {
   margin-left: 10px;
 }
 
-h2 > span {
+h1 > span {
   padding-left: 10px;
   padding-right: 20px;
 
   font-style: italic;
 }
 
-h2 > span.red { background-color: #e74c3c; }
-h2 > span.yellow { background-color: #f39c12; }
-h2 > span.blue { background-color: #2980b9; }
-h2 > span.green { background-color: #27ae60; }
+h1 > span.red { background-color: #e74c3c; }
+h1 > span.yellow { background-color: #f39c12; }
+h1 > span.blue { background-color: #2980b9; }
+h1 > span.green { background-color: #27ae60; }
 
 .team, .points {
   width: 50%;
