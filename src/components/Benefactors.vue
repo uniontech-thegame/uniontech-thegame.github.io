@@ -5,7 +5,7 @@
       <p>Ils sont bien faits.</p>
       <p>
         <ul>
-          <li v-for="benefactor of benefactors"><b>{{ benefactor.name.first }} {{ benefactor.name.last }} ❤️</b></li>
+          <li v-for="benefactor of benefactors"><b>{{ benefactor.name.first }} {{ benefactor.name.last }}</b></li>
         </ul>
       </p>
     </div>
