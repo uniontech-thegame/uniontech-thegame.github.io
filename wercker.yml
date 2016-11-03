@@ -11,6 +11,9 @@ build:
     - script:
         name: copy CNAME to deployable
         code: cp ./CNAME $WERCKER_OUTPUT_DIR
+    - script:
+        name: add .nojekyll to deployable
+        code: touch $WERCKER_OUTPUT_DIR/.nojekyll
 
 deploy:
   steps:
