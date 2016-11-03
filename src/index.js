@@ -9,7 +9,7 @@ import VueResource from 'vue-resource'
 
 Vue.use(VueResource)
 
-const app = new EVA({ mode: 'history' })
+const app = new EVA()
 
 app.model({
   state: {
