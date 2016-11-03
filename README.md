@@ -1,7 +1,7 @@
 *Union'Tech: The Game* website
 ============================
 
-[![www.uniontech-thegame.tk](https://img.shields.io/badge/URL-www.uniontech--thegame.tk-blue.svg)](http://www.uniontech-thegame.tk) [![wercker status](https://app.wercker.com/status/c2cb2dd64b5c4c44dd013dcc92da34c8/ss/website "wercker status")](https://app.wercker.com/project/byKey/c2cb2dd64b5c4c44dd013dcc92da34c8)
+[![www.uniontech-thegame.tk](https://img.shields.io/badge/URL-www.uniontech--thegame.tk-blue.svg)](http://www.uniontech-thegame.tk) [![wercker status](https://app.wercker.com/status/c2cb2dd64b5c4c44dd013dcc92da34c8/ss/website "wercker status")](https://app.wercker.com/project/byKey/c2cb2dd64b5c4c44dd013dcc92da34c8) [![dependencies Status](https://david-dm.org/uniontech-thegame/uniontech-thegame.github.io/status.svg)](https://david-dm.org/uniontech-thegame/uniontech-thegame.github.io) [![devDependencies Status](https://david-dm.org/uniontech-thegame/uniontech-thegame.github.io/dev-status.svg)](https://david-dm.org/uniontech-thegame/uniontech-thegame.github.io?type=dev)
 
 This repository contains the sources of the *Union'Tech: The Game* website. It is automatically built and published to the  [master branch](https://github.com/uniontech-thegame/uniontech-thegame.github.io/tree/master) on push on this `website` branch.
 
