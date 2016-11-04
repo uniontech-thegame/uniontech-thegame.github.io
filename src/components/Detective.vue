@@ -6,7 +6,7 @@
     </modal>
     <div class="container">
       <h1>Détective</h1>
-      <p>Vous avez trouvé un code ou la réponse à une énigme ? Vous êtes au bon endroit.</p>
+      <p>Vous avez trouvé un code cadeau ou la réponse à une énigme ? Vous êtes au bon endroit.</p>
       <p>
         <form @submit.prevent="send">
           <fieldset>
@@ -16,18 +16,18 @@
           </fieldset>
 
           <label>
-            Code
-            <input type="text" v-model="code" placeholder="Code" required>
+            {{ type === 'enigma' ? "Identifiant de l'énigme" : 'Code' }}
+            <input type="text" v-model="code" required>
           </label>
 
           <label v-if="type === 'enigma'">
             Réponse
-            <input type="text" v-model="answer" placeholder="Réponse à l'énigme" required>
+            <input type="text" v-model="answer" required>
           </label>
 
           <label>
-            E-mail
-            <input type="email" v-model="email" placeholder="E-mail" required>
+            Votre e-mail
+            <input type="email" v-model="email" required>
           </label>
 
           <label>
