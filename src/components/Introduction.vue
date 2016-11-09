@@ -52,8 +52,7 @@
       </p>
 
       <p>
-        Pour les activités, nous enverrons une à deux semaines avant le début d'une activité, à tous les participants, un formulaire
-        vous permettant de vous inscrire. Les places sont limitées, les premiers à s'inscrire seront les premiers servis
+        Une à deux semaines avant le début de chaque activité, tous les participants recevront un formulaire d'inscription. Les places sont limitées, les premiers à s'inscrire seront les premiers servis
         (maximum de 5 membres par équipe).
       </p>
       
