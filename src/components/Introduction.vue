@@ -56,6 +56,8 @@
         vous permettant de vous inscrire. Les places sont limitées, les premiers à s'inscrire seront les premiers servis
         (maximum de 5 membres par équipe).
       </p>
+      
+      <p class="video-container"><iframe width="560" height="315" src="https://www.youtube.com/embed/HXj3WJaNLEc?rel=0" frameborder="0" allowfullscreen></iframe></p>
     </div>
   </div>
 </template>
@@ -77,5 +79,23 @@ h2, p a {
   float: left;
   margin-right: 10px;
   margin-bottom: 10px;
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 90%;
+  height: 100%;
 }
 </style>
