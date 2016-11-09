@@ -47,7 +47,7 @@
       </p>
 
       <p>
-        Nous avons fait le choix de vous attribuer aléatoirement une équipe pour vous forcer à travailler en équipe
+        Nous avons fait le choix de vous attribuer aléatoirement une équipe pour vous inciter à travailler en équipe
         et à faire de nouvelles rencontres, dans l'esprit IN'TECH.
       </p>
 
