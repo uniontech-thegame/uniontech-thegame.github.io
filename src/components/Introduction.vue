@@ -2,6 +2,7 @@
   <div class="page">
     <div class="container">
       <h1>UNION'TECH: The Game</h1>
+      <p><img src="../assets/images/logo_big.png" alt="UNION'TECH" id="image"></p>
       <p>
         Bienvenue sur le site UNION'TECH: The Game!<br>
         Ici, vous allez pouvoir suivre le cours de la compétition tout au long du semestre.
@@ -69,5 +70,12 @@
 
 h2, p a {
   color: #fff;
+}
+
+#image {
+  width: 270px;
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 10px;
 }
 </style>
