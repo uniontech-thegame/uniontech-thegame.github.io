@@ -18,8 +18,8 @@
 
         <h3><i class="material-icons">directions_run</i> Activités</h3>
         <p>
-          <ul v-if="currentTeam.activities_results.length !== 0">
-            <li v-for="activityResult of currentTeam.activities_results">
+          <ul v-if="currentTeam.activitiesResults.length !== 0">
+            <li v-for="activityResult of currentTeam.activitiesResults">
               <b>{{ activityResult.title }} ({{ activityResult.points }} point{{ activityResult.points > 1 ? 's' : '' }})</b>
               le {{ activityResult.date | date }}<br>
               <i>{{ activityResult.description }}</i>
@@ -33,7 +33,7 @@
           <ul v-if="currentTeam.enigmas.length !== 0">
             <li v-for="enigma of currentTeam.enigmas">
               <b>{{ enigma.code }} ({{ enigma.points }} point{{ enigma.points > 1 ? 's' : '' }})</b>
-              le {{ enigma.redeem_date | date }}<br>
+              le {{ enigma.redeemDate | date }}<br>
               <i>
                 Trouvé par {{ enigma.player.name.first }} {{ enigma.player.name.last }} (S{{ enigma.player.semester }}). {{ enigma.description }}<br>
                 La réponse était "{{ enigma.answer }}".
@@ -48,7 +48,7 @@
           <ul v-if="currentTeam.gifts.length !== 0">
             <li v-for="gift of currentTeam.gifts">
               <b>{{ gift.code }} ({{ gift.points }} point{{ gift.points > 1 ? 's' : '' }})</b>
-              le {{ gift.redeem_date | date }}<br>
+              le {{ gift.redeemDate | date }}<br>
               <i>Trouvé par {{ gift.player.name.first }} {{ gift.player.name.last }} (S{{ gift.player.semester }}). {{ gift.description }}</i>
             </li>
           </ul>
@@ -71,7 +71,7 @@ export default {
   computed: {
     currentTeam: function () {
       const index = this.team.charAt(0).toUpperCase() + this.team.slice(1)
-      return this.teams[index] || { players: [], activities_results: [], enigmas: [], gifts: [] }
+      return this.teams[index] || { players: [], activitiesResults: [], enigmas: [], gifts: [] }
     },
     ...mapState(['teams'])
   },

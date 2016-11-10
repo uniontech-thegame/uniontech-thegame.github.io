@@ -4,6 +4,7 @@
     <img src="../assets/images/logo.png" alt="UNION'TECH" id="logo" role="banner">
     <custom-menu></custom-menu>
     <router-view role="main"></router-view>
+    <div class="free_counter"><span>{{ availableEnigmasCount }} énigme{{ availableGiftsCount > 1 ? 's' : '' }} et {{ availableGiftsCount }} code{{ availableEnigmasCount > 1 ? 's' : '' }} cadeau non trouvé{{ availableEnigmasCount > 1 || availableGiftsCount > 1 ? 's' : '' }}</span></div>
   </div>
 </template>
 
@@ -13,7 +14,7 @@ import {mapState, mapActions} from 'eva.js'
 
 export default {
   computed: {
-    ...mapState(['isLoading'])
+    ...mapState(['isLoading', 'availableGiftsCount', 'availableEnigmasCount'])
   },
   methods: {
     ...mapActions(['refreshState'])
@@ -92,11 +93,31 @@ export default {
     color: #fff;
     font-size: 30px;
 
-    z-index: 1;
+    z-index: 2;
   }
 
   .loading-screen > p {
     margin-top: 50vh;
     transform: translateY(-50%);
+  }
+  
+  .free_counter {
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    
+    left: 0;
+    bottom: 0;
+    
+    text-align: center;
+    
+    background-color: #fff;
+    box-shadow: 0 -3px 5px rgba(0, 0, 0, .2);
+    z-index: 1;
+  }
+  
+  .free_counter > span {
+    line-height: 50px;
+    font-size: 20px;
   }
 </style>
