@@ -4,7 +4,7 @@
     <img src="../assets/images/logo.png" alt="UNION'TECH" id="logo" role="banner">
     <custom-menu></custom-menu>
     <router-view role="main"></router-view>
-    <div class="free_counter"><span>{{ availableEnigmasCount }} énigme{{ availableGiftsCount > 1 ? 's' : '' }} et {{ availableGiftsCount }} code{{ availableEnigmasCount > 1 ? 's' : '' }} cadeau non trouvé{{ availableEnigmasCount > 1 || availableGiftsCount > 1 ? 's' : '' }}</span></div>
+    <div class="free_counter"><span>{{ availableEnigmasCount }} énigme{{ availableEnigmasCount > 1 ? 's' : '' }} et {{ availableGiftsCount }} code{{ availableGiftsCount > 1 ? 's' : '' }} cadeau non trouvé{{ availableEnigmasCount > 1 || availableGiftsCount > 1 ? 's' : '' }}</span></div>
   </div>
 </template>
 
