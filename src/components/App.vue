@@ -3,9 +3,18 @@
     <div v-if="isLoading" class="loading-screen"><p>Chargement... On y est presque !</p></div>
     <modal v-if="showAvailableModal" @close="showAvailableModal = false">
       <h3 slot="header">Codes et énigmes non trouvés</h3>
-      <p slot="body" style="color: #000;">
-        A venir
-      </p>
+      <div slot="body" style="color: #000;">
+        <h4>Énigmes non trouvées</h1>
+        <ul>
+          <li v-if="availableEnigmas.length !== 0" v-for="enigma in availableEnigmas">Énigme <i>{{ enigma.id }}</i></li>
+          <li v-else>Aucune</li>
+        </ul>
+        
+        <h4>Codes cadeaux non trouvés</h1>
+        <ul>
+          <li v-for="count, location in availableGifts">{{ count }} {{ location | formatLocation }}</li>
+        </ul>
+      </div>
     </modal>
     <img src="../assets/images/logo.png" alt="UNION'TECH" id="logo" role="banner">
     <custom-menu></custom-menu>
@@ -32,6 +41,20 @@ export default {
     ...mapActions(['refreshState']),
     openAvailableModal () {
       this.showAvailableModal = true
+    }
+  },
+  filters: {
+    formatLocation (type) {
+      switch (type) {
+        case 'website':
+          return 'sur le site Web'
+        case 'total':
+          return 'au total'
+        case 'building':
+          return "dans le bâtiment IN'TECH"
+        case 'email':
+          return 'dans les e-mails'
+      }
     }
   },
   components: { Modal, CustomMenu },
