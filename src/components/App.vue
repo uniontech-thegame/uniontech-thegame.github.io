@@ -43,13 +43,16 @@ export default {
 
   .page {
     background-color: white;
+    
+    padding-bottom: 50px;
   }
 
   .page .container {
-    width: 70%;
-    height: 95%;
+    width: 80%;
+    height: 100%;
 
     padding-top: 20px;
+    padding-right: 10%;
     margin-left: 20%;
 
     overflow-y: auto;
