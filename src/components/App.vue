@@ -6,7 +6,9 @@
       <div slot="body" style="color: #000;">
         <h4>Énigmes non trouvées</h1>
         <ul>
-          <li v-if="availableEnigmas.length !== 0" v-for="enigma in availableEnigmas">Énigme <i>{{ enigma.id }}</i></li>
+          <template v-if="availableEnigmas.length !== 0">
+            <li v-for="enigma in availableEnigmas">Énigme <i>{{ enigma.id }}</i></li>
+          </template>
           <li v-else>Aucune</li>
         </ul>
         
