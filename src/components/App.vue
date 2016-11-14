@@ -151,8 +151,9 @@ export default {
     bottom: 0;
     
     text-align: center;
+    color: #fff;
     
-    background-color: #fff;
+    background-color: #e74c3c;
     box-shadow: 0 -3px 5px rgba(0, 0, 0, .2);
     z-index: 1;
   }
@@ -160,5 +161,9 @@ export default {
   .free_counter > span {
     line-height: 50px;
     font-size: 20px;
+  }
+  
+  .free_counter > span > a {
+    color: #fff;
   }
 </style>
