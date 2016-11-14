@@ -1,27 +1,40 @@
 <template>
   <div id="app">
     <div v-if="isLoading" class="loading-screen"><p>Chargement... On y est presque !</p></div>
+    <modal v-if="showAvailableModal" @close="showAvailableModal = false">
+      <h3 slot="header">Codes et énigmes non trouvés</h3>
+      <p slot="body" style="color: #000;">
+        A venir
+      </p>
+    </modal>
     <img src="../assets/images/logo.png" alt="UNION'TECH" id="logo" role="banner">
     <custom-menu></custom-menu>
     <router-view role="main"></router-view>
-    <div class="free_counter"><span>{{ availableEnigmasCount }} énigme{{ availableEnigmasCount > 1 ? 's' : '' }} et {{ availableGiftsCount }} code{{ availableGiftsCount > 1 ? 's' : '' }} cadeau non trouvé{{ availableEnigmasCount > 1 || availableGiftsCount > 1 ? 's' : '' }}</span></div>
+    <div class="free_counter"><span>{{ availableEnigmas.length }} <i class="material-icons">search</i> et {{ availableGifts.total }} <i class="material-icons">card_giftcard</i> non trouvé{{ availableEnigmas.length > 1 || availableGifts.total > 1 ? 's' : '' }} - <a href="#" @click.prevent="openAvailableModal">Détail</a></span></div>
   </div>
 </template>
 
 <script>
 import CustomMenu from './Menu'
 import {mapState, mapActions} from 'eva.js'
+import Modal from './Modal'
 
 export default {
+  data () {
+    return {
+      showAvailableModal: false
+    }
+  },
   computed: {
-    ...mapState(['isLoading', 'availableGiftsCount', 'availableEnigmasCount'])
+    ...mapState(['isLoading', 'availableGifts', 'availableEnigmas'])
   },
   methods: {
-    ...mapActions(['refreshState'])
+    ...mapActions(['refreshState']),
+    openAvailableModal () {
+      this.showAvailableModal = true
+    }
   },
-  components: {
-    CustomMenu
-  },
+  components: { Modal, CustomMenu },
   created () {
     this.refreshState()
   }

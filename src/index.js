@@ -16,8 +16,8 @@ app.model({
     isLoading: 0,
     teams: {},
     benefactors: [],
-    availableGiftsCount: 0,
-    availableEnigmasCount: 0
+    availableGifts: { total: 0 },
+    availableEnigmas: []
   },
   mutations: {
     SET_IS_LOADING (state, loading) {

@@ -11,8 +11,8 @@
         <form @submit.prevent="send">
           <fieldset>
             <legend>Type</legend>
-            <label class="radio-label"><input type="radio" v-model="type" name="type" value="enigma"> Énigme</label>
-            <label class="radio-label"><input type="radio" v-model="type" name="type" value="gift"> Cadeau</label>
+            <label class="radio-label"><input type="radio" v-model="type" name="type" value="enigma"> <i class="material-icons">search</i> Énigme</label>
+            <label class="radio-label"><input type="radio" v-model="type" name="type" value="gift"> <i class="material-icons">card_giftcard</i> Cadeau</label>
           </fieldset>
 
           <label>
