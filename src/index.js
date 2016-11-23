@@ -5,6 +5,7 @@ import Detective from 'components/Detective'
 import Teams from 'components/Teams'
 import TeamDetail from 'components/TeamDetail'
 import Benefactors from 'components/Benefactors'
+import Sponsors from 'components/Sponsors'
 import VueResource from 'vue-resource'
 
 Vue.use(VueResource)
@@ -42,6 +43,7 @@ app.router(route => [
   { meta: { title: '🕵 Détective' }, ...route('/detective', Detective) },
   { meta: { title: '🏆 Équipes et classement' }, ...route('/equipes', Teams) },
   { meta: { title: '🌟 Membres bienfaiteurs' }, ...route('/bienfaiteurs', Benefactors) },
+  { meta: { title: '👍 Sponsors' }, ...route('/sponsors', Sponsors) },
   { meta: { title: '🔭 Équipe', isTeam: true }, ...route('/equipe/:team(jaune|rouge|bleu|vert)', TeamDetail) },
   { path: '*', redirect: '/' }
 ])

@@ -4,6 +4,7 @@
     <router-link to="/detective" exact><img src="../assets/images/detective.png" alt="Détective"></router-link>
     <router-link to="/equipes" exact><img src="../assets/images/team.png" alt="Équipes et classement"></router-link>
     <router-link to="/bienfaiteurs" exact><img src="../assets/images/star.png" alt="Membres bienfaiteurs"></router-link>
+    <router-link to="/sponsors" exact><img src="../assets/images/handshake.png" alt="Sponsors"></router-link>
   </nav>
 </template>
 
