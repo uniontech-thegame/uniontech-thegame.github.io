@@ -4,10 +4,10 @@
       <h1>Sponsors</h1>
       <p>
         <ul>
-          <li><a href="https://www.decathlon.fr"><img src="../assets/images/sponsors/decathlon.png" alt="Decathlon"></a></li>
-          <li><a href="https://www.topachat.com"><img src="../assets/images/sponsors/topachat.png" alt="Top Achat"></a></li>
-          <li><a href="https://www.g2a.com"><img src="../assets/images/sponsors/g2a.png" alt="G2A"></a></li>
-          <li><a href="http://www.goclecd.fr"><img src="../assets/images/sponsors/goclecd.png" alt="Goclecd"></a></li>
+          <li><a href="https://www.decathlon.fr" target="_blank"><img src="../assets/images/sponsors/decathlon.png" alt="Decathlon"></a></li>
+          <li><a href="https://www.topachat.com" target="_blank"><img src="../assets/images/sponsors/topachat.png" alt="Top Achat"></a></li>
+          <li><a href="https://www.g2a.com" target="_blank"><img src="../assets/images/sponsors/g2a.png" alt="G2A"></a></li>
+          <li><a href="http://www.goclecd.fr" target="_blank"><img src="../assets/images/sponsors/goclecd.png" alt="Goclecd"></a></li>
         </ul>
       </p>
     </div>
