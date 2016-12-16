@@ -39,10 +39,10 @@
         Vous avez tous été affectés de façon aléatoire à une équipe, un email vous informant de l'équipe à laquelle vous appartenez.<br>
         Vous pouvez consulter les membres de chaque équipe:
         <ul>
-          <li><router-link to="/equipe/bleu">Équipe Bleu</router-link></li>
-          <li><router-link to="/equipe/jaune">Équipe Jaune</router-link></li>
-          <li><router-link to="/equipe/vert">Équipe Vert</router-link></li>
-          <li><router-link to="/equipe/rouge">Équipe Rouge</router-link></li>
+          <li><router-link to="/equipe/bleu">Équipe 💧 Bleu</router-link></li>
+          <li><router-link to="/equipe/jaune">Équipe 🍌 Jaune</router-link></li>
+          <li><router-link to="/equipe/vert">Équipe 🍏 Vert</router-link></li>
+          <li><router-link to="/equipe/rouge">Équipe 🍅 Rouge</router-link></li>
         </ul>
       </p>
 

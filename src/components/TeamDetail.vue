@@ -1,7 +1,7 @@
 <template>
   <div class="page">
     <div class="container">
-      <h1>Équipe <span :class="{ yellow: team === 'jaune', red: team === 'rouge', green: team === 'vert', blue: team === 'bleu' }">{{team | capitalize}}</span></h1>
+      <h1>Équipe <span :class="{ yellow: team === 'jaune', red: team === 'rouge', green: team === 'vert', blue: team === 'bleu' }">{{ team | emoji }} {{team | capitalize}}</span></h1>
 
       <div class="team">
         <h2>Membres</h2>
@@ -79,6 +79,18 @@ export default {
     this.team = this.$route.params.team
   },
   filters: {
+    emoji: function (team) {
+      switch (team) {
+        case 'bleu':
+          return '💧'
+        case 'jaune':
+          return '🍌'
+        case 'vert':
+          return '🍏'
+        case 'rouge':
+          return '🍅'
+      }
+    },
     capitalize: function (value) {
       if (!value) return ''
       value = value.toString()
